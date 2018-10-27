@@ -76,4 +76,13 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/ic_eye_off" />
 
+    <ImageView
+        android:id="@+id/go_to_activity"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="11dp"
+        android:src="@drawable/ic_add" />
+
 </RelativeLayout>
