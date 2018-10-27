@@ -5,7 +5,7 @@ The app displays a question and multiple choice answers. whenever the user selec
 
 ### App Walk-though
 
-<img src="https://user-images.githubusercontent.com/43284930/47608093-9597d680-d9ee-11e8-9966-11e4fd4c1055.gif" width=200><br>
+<img src="![demo_flash_card](https://user-images.githubusercontent.com/43284930/47608093-9597d680-d9ee-11e8-9966-11e4fd4c1055.gif)" width=200><br>
 
 ## Required
 - [x] Create New Project in Android Studio
@@ -17,5 +17,5 @@ The app displays a question and multiple choice answers. whenever the user selec
 - [x] toggle the flashcard between the question side and the answer side
 - [x] Style the question and answer side of the card to better distinguish between the two sides
 - [x] Add selectable multiple choice answers beneath the card
-   - [x] Change the background color of the multiple choice answers when clicked to indicate whether the question was answered correctly
+- [x] Change the background color of the multiple choice answers when clicked to indicate whether the question was answered correctly
 - [x] Further customize and style the card
