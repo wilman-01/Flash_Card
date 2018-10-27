@@ -5,7 +5,7 @@ The app displays a question and multiple choice answers. whenever the user selec
 
 ### App Walk-though
 
-<img src="![demo_flash_card](https://user-images.githubusercontent.com/43284930/47608093-9597d680-d9ee-11e8-9966-11e4fd4c1055.gif)" width=200><br>
+<img src="(https://user-images.githubusercontent.com/43284930/47608093-9597d680-d9ee-11e8-9966-11e4fd4c1055.gif)" width=200><br>
 
 ## Required
 - [x] Create New Project in Android Studio
