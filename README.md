@@ -1,14 +1,11 @@
 ## Flash_Card
 
 ### App Description
-`TODO://` The app displays a question and multiple choice answers. whenever the user selects an answer it turns the textview red if the answer is wrong and green if correct. 
+The app displays a question and multiple choice answers. whenever the user selects an answer it turns the textview red if the answer is wrong and green if correct. 
 
 ### App Walk-though
-`TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
 
-<img src="YOUR_GIF_URL_HERE" width=200><br>
-
-`TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
+<img src="https://user-images.githubusercontent.com/43284930/47608093-9597d680-d9ee-11e8-9966-11e4fd4c1055.gif" width=200><br>
 
 ## Required
 - [x] Create New Project in Android Studio
@@ -21,4 +18,4 @@
 - [x] Style the question and answer side of the card to better distinguish between the two sides
 - [x] Add selectable multiple choice answers beneath the card
    - [x] Change the background color of the multiple choice answers when clicked to indicate whether the question was answered correctly
-- [ ] Further customize and style the card
+- [x] Further customize and style the card
