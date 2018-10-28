@@ -2,6 +2,7 @@ package com.example.wilman.flash_card;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     boolean isShowingAnswers = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,11 +73,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        //findViewById(R.id.toggle_choices_visibility).setOnClickListener(new View.OnClickListener() {
-          //  @Override
-            //public void onClick(View v) {
-
         findViewById(R.id.toggle_choices_visibility).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,15 +96,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AddCardActivity.class);
+                String question = ((TextView) findViewById(R.id.flashcard_question)).getText().toString();
+                String answer = ((TextView) findViewById(R.id.flashcard_answer)).getText().toString();
+                intent.putExtra("stringKey1", (Parcelable[]) null);
+                intent.putExtra("stringKey2", (Parcelable[]) null);
+                intent.putExtra("stringKey3", question);
+                intent.putExtra("stringKey4", answer);
+                MainActivity.this.startActivityForResult(intent,100);
+
+            }
+        });
+        findViewById(R.id.edit_info).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddCardActivity.class);
+                String question = ((TextView) findViewById(R.id.flashcard_question)).getText().toString();
+                String answer = ((TextView) findViewById(R.id.flashcard_answer)).getText().toString();
+                intent.putExtra("stringKey1", question);
+                intent.putExtra("stringKey2", answer);
                 MainActivity.this.startActivityForResult(intent,100);
             }
         });
-
-
-
-
-
-
 
     }
     @Override
