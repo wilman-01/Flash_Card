@@ -5,7 +5,7 @@ Creating data base for different flashcards.
 
 ### App Walk-though
 
-<img src="(https://user-images.githubusercontent.com/43284930/48665927-4852d600-ea7d-11e8-9ba4-72a0056e71e1.gif" width=200><br>
+<img src="https://user-images.githubusercontent.com/43284930/48665956-dcbd3880-ea7d-11e8-8732-17a1c794fe54.gif" width=200><br>
 
 
 ## Required
