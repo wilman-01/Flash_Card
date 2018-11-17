@@ -37,6 +37,7 @@ public class AddCardActivity extends AppCompatActivity {
                     String string2 = getIntent().getStringExtra("stringKey4");
                     data.putExtra("Question", string1); // puts one string into the Intent, with the key as 'string1'
                     data.putExtra("Answer", string2); // puts another string into the Intent, with the key as 'string2
+                    //"editcard",
                     setResult(RESULT_OK, data); // set result code and bundle data for response
                 }
 
@@ -55,6 +56,7 @@ public class AddCardActivity extends AppCompatActivity {
         findViewById(R.id.save_info).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String string1 = ((EditText) findViewById(R.id.new_question)).getText().toString();
                 String string2 = ((EditText) findViewById(R.id.new_answer)).getText().toString();
                 String s1 = getIntent().getStringExtra("stringKey1"); // this string will be 'harry potter`

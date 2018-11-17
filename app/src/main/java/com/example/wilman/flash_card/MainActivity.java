@@ -8,13 +8,32 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
     boolean isShowingAnswers = true;
+    FlashcardDatabase flashcardDatabase;
+    List<Flashcard> allFlashcards;
+    int currentCardDisplayedIndex = 0;
+
+    public int getRandomNumber(int minNumber, int maxNumber) {
+        Random rand = new Random();
+        return rand.nextInt((maxNumber - minNumber) + 1) + minNumber;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        flashcardDatabase = new FlashcardDatabase(this);
+        allFlashcards = flashcardDatabase.getAllCards();
+
+        if (allFlashcards != null && allFlashcards.size() > 0) {
+            ((TextView) findViewById(R.id.flashcard_question)).setText(allFlashcards.get(0).getQuestion());
+            ((TextView) findViewById(R.id.flashcard_answer)).setText(allFlashcards.get(0).getAnswer());
+        }
 
 
         findViewById(R.id.flashcard_question).setOnClickListener(new View.OnClickListener() {
@@ -112,20 +131,58 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, AddCardActivity.class);
                 String question = ((TextView) findViewById(R.id.flashcard_question)).getText().toString();
                 String answer = ((TextView) findViewById(R.id.flashcard_answer)).getText().toString();
+                //while (i<0)int card_to_edit =
                 intent.putExtra("stringKey1", question);
                 intent.putExtra("stringKey2", answer);
                 MainActivity.this.startActivityForResult(intent,100);
             }
         });
 
+
+        findViewById(R.id.next_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // advance our pointer index so we can show the next card
+                //currentCardDisplayedIndex++;
+                currentCardDisplayedIndex= getRandomNumber(0,allFlashcards.size()-1);
+                findViewById(R.id.flashcard_question).setVisibility(View.VISIBLE);
+                findViewById(R.id.flashcard_answer).setVisibility(View.INVISIBLE);
+
+                // make sure we don't get an IndexOutOfBoundsError if we are viewing the last indexed card in our list
+                if ( allFlashcards.size() > 0) {
+                    //currentCardDisplayedIndex = 0;
+                    // set the question and answer TextViews with data from the database
+                    ((TextView) findViewById(R.id.flashcard_question)).setText(allFlashcards.get(currentCardDisplayedIndex).getQuestion());
+                    ((TextView) findViewById(R.id.flashcard_answer)).setText(allFlashcards.get(currentCardDisplayedIndex).getAnswer());
+                }
+                else if (allFlashcards.size() == 0){
+                    ((TextView) findViewById(R.id.flashcard_question)).setText("Introduce a new Flashcard");
+                }
+
+
+            }
+        });
+
+        findViewById(R.id.deleteBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flashcardDatabase.deleteCard(((TextView) findViewById(R.id.flashcard_question)).getText().toString());
+                allFlashcards = flashcardDatabase.getAllCards();
+                currentCardDisplayedIndex++;
+            }
+        });
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
         if (requestCode == 100) { // this 100 needs to match the 100 we used when we called startActivityForResult!
             String string1 = data.getExtras().getString("Question"); // 'string1' needs to match the key we used when we put the string in the Intent
             String string2 = data.getExtras().getString("Answer");
             ((TextView) findViewById(R.id.flashcard_question)).setText(string1);
             ((TextView) findViewById(R.id.flashcard_answer)).setText(string2);
+            flashcardDatabase.insertCard(new Flashcard(string1, string2));
+            allFlashcards = flashcardDatabase.getAllCards();
 
         }
 
