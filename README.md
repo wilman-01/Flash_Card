@@ -1,10 +1,9 @@
 ## Lab 3
 
 ### App Description
-`TODO://` Add app description
+Creating data base for different flashcards.
 
 ### App Walk-though
-Creating data base for different flashcards.
 
 <img src="(https://user-images.githubusercontent.com/43284930/48665927-4852d600-ea7d-11e8-9ba4-72a0056e71e1.gif" width=200><br>
 
