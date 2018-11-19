@@ -1,3 +1,23 @@
+## Lab 3
+
+### App Description
+Creating data base for different flashcards.
+
+### App Walk-though
+
+<img src="https://user-images.githubusercontent.com/43284930/48665956-dcbd3880-ea7d-11e8-8732-17a1c794fe54.gif" width=200><br>
+
+
+## Required
+- [x] User can create a card and still see their created card when the app is relaunched.
+- [x] User can create multiple cards and browse through all created cards
+
+## Optional
+- [x] User can delete a card and no longer see it in their deck anymore
+- [x] Flashcards are shown in random order instead of the order they were created in
+- [ ] User can edit a card and see the edit saved when they browse through their deck of cards
+- [ ] User can create flashcards with multiple answers and be able to browse through cards with multiple choice answers shown
+
 ## Lab 2
 
 ### App Description
@@ -5,7 +25,7 @@ Add new question and answer to Flash_Card app from a new activity.
 
 ### App Walk-though
 
-<img src="https://user-images.githubusercontent.com/43284930/47609718-b4579680-da09-11e8-9d59-05e1b360c4cb.gif" width=200><br>
+<img src="https://user-images.githubusercontent.com/43284930/47937742-b315e600-deaf-11e8-8258-fd2f4d7e922c.gif" width=200><br>
 
 
 
@@ -17,8 +37,8 @@ Add new question and answer to Flash_Card app from a new activity.
 - [x] Push your progress to GitHub!
 
 ## Optional
-- [ ] User can edit a card
-- [ ] An error message is shown if the user doesn't enter both a Question and an Answer
+- [x] User can edit a card
+- [x] An error message is shown if the user doesn't enter both a Question and an Answer
 - [ ] A notification is shown if the card was created successfully
 - [ ] User can also enter multiple choice answers when creating a card
 - [ ] App is further styled and customized!
